@@ -1,5 +1,7 @@
+
 Template.newPost.rendered = function(){
     $('#summernote').summernote({height: 500});
+
 }
 
 Template.newPost.events({
@@ -16,3 +18,8 @@ Template.newPost.events({
      return false;
    }
  });
+
+
+Template.newPost.onDestroyed(function() {
+    $('#summernote').destroy();
+});
