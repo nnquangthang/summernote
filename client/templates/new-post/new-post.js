@@ -4,6 +4,10 @@ Template.newPost.rendered = function(){
 
 }
 
+Template.newPost.onDestroyed(function() {
+    $('#summernote').destroy();
+});
+
 Template.newPost.events({
    'click #submit': function (event) {
      event.preventDefault();
